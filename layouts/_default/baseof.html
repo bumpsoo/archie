@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "header.html" . -}}
-    <body>
-        <div class="content">
+{{- partial "header.html" . -}}
+
+<body>
+    <div class="content">
         {{- partial "head.html" . -}}
         {{- block "main" . }}{{- end }}
         {{- partial "footer.html" . -}}
-        </div>
-    </body>
+    </div>
+    {{ if .Page.Store.Get "hasMermaid" }}
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    {{ end }}
+</body>
+
 </html>

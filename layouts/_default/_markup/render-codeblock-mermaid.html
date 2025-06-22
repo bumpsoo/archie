@@ -1,0 +1,6 @@
+{{/* 이 페이지에 Mermaid 다이어그램이 있음을 .Page.Store에 표시합니다. */}}
+{{ .Page.Store.Set "hasMermaid" true }}
+
+<div class="mermaid">
+    {{ .Inner }}
+</div>
